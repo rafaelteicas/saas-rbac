@@ -20,12 +20,21 @@ importers:
 
   apps/api:
     dependencies:
+      '@faker-js/faker':
+        specifier: 9.0.1
+        version: 9.0.1
       '@fastify/cors':
         specifier: 9.0.1
         version: 9.0.1
+      '@prisma/client':
+        specifier: 5.19.1
+        version: 5.19.1(prisma@5.19.1)
       '@saas/auth':
         specifier: workspace:*
         version: link:../../packages/auth
+      bcryptjs:
+        specifier: 2.4.3
+        version: 2.4.3
       fastify:
         specifier: 4.28.1
         version: 4.28.1
@@ -45,12 +54,18 @@ importers:
       '@saas/tsconfig':
         specifier: workspace:*
         version: link:../../config/tsconfig
+      '@types/bcryptjs':
+        specifier: 2.4.6
+        version: 2.4.6
       '@types/node':
         specifier: 22.5.4
         version: 22.5.4
       prisma:
         specifier: 5.19.1
         version: 5.19.1
+      tsx:
+        specifier: 4.19.1
+        version: 4.19.1
 
   config/eslint-config:
     devDependencies:
@@ -387,6 +402,11 @@ packages:
       levn: 0.4.1
     dev: true
 
+  /@faker-js/faker@9.0.1:
+    resolution: {integrity: sha512-4mDeYIgM3By7X6t5E6eYwLAa+2h4DeZDF7thhzIg6XB76jeEvMwadYAMCFJL/R4AnEBcAUO9+gL0vhy3s+qvZA==}
+    engines: {node: '>=18.0.0', npm: '>=9.0.0'}
+    dev: false
+
   /@fastify/ajv-compiler@3.6.0:
     resolution: {integrity: sha512-LwdXQJjmMD+GwLOkP7TVC68qa+pSSogeWWmznRJ/coyTcfe9qA05AHFSe1eZFwK6q+xVRpChnvFUkf1iYaSZsQ==}
     dependencies:
@@ -454,13 +474,24 @@ packages:
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: true
 
+  /@prisma/client@5.19.1(prisma@5.19.1):
+    resolution: {integrity: sha512-x30GFguInsgt+4z5I4WbkZP2CGpotJMUXy+Gl/aaUjHn2o1DnLYNTA+q9XdYmAQZM8fIIkvUiA2NpgosM3fneg==}
+    engines: {node: '>=16.13'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      prisma: 5.19.1
+    dev: false
+
   /@prisma/debug@5.19.1:
     resolution: {integrity: sha512-lAG6A6QnG2AskAukIEucYJZxxcSqKsMK74ZFVfCTOM/7UiyJQi48v6TQ47d6qKG3LbMslqOvnTX25dj/qvclGg==}
-    dev: true
 
   /@prisma/engines-version@5.19.1-2.69d742ee20b815d88e17e54db4a2a7a3b30324e3:
     resolution: {integrity: sha512-xR6rt+z5LnNqTP5BBc+8+ySgf4WNMimOKXRn6xfNRDSpHvbOEmd7+qAOmzCrddEc4Cp8nFC0txU14dstjH7FXA==}
-    dev: true
 
   /@prisma/engines@5.19.1:
     resolution: {integrity: sha512-kR/PoxZDrfUmbbXqqb8SlBBgCjvGaJYMCOe189PEYzq9rKqitQ2fvT/VJ8PDSe8tTNxhc2KzsCfCAL+Iwm/7Cg==}
@@ -470,7 +501,6 @@ packages:
       '@prisma/engines-version': 5.19.1-2.69d742ee20b815d88e17e54db4a2a7a3b30324e3
       '@prisma/fetch-engine': 5.19.1
       '@prisma/get-platform': 5.19.1
-    dev: true
 
   /@prisma/fetch-engine@5.19.1:
     resolution: {integrity: sha512-pCq74rtlOVJfn4pLmdJj+eI4P7w2dugOnnTXpRilP/6n5b2aZiA4ulJlE0ddCbTPkfHmOL9BfaRgA8o+1rfdHw==}
@@ -478,13 +508,11 @@ packages:
       '@prisma/debug': 5.19.1
       '@prisma/engines-version': 5.19.1-2.69d742ee20b815d88e17e54db4a2a7a3b30324e3
       '@prisma/get-platform': 5.19.1
-    dev: true
 
   /@prisma/get-platform@5.19.1:
     resolution: {integrity: sha512-sCeoJ+7yt0UjnR+AXZL7vXlg5eNxaFOwC23h0KvW1YIXUoa7+W2ZcAUhoEQBmJTW4GrFqCuZ8YSP0mkDa4k3Zg==}
     dependencies:
       '@prisma/debug': 5.19.1
-    dev: true
 
   /@rocketseat/eslint-config@2.2.2(eslint@9.10.0)(typescript@5.6.2):
     resolution: {integrity: sha512-kSWN4FOyhTEiD2O6OGL2OG89MHq8HSoDwOVvy6Xqdv1DytdMvOgZsD7xBYsAyYWvwD0P+YR1nIDluVGCV+GNxA==}
@@ -518,6 +546,10 @@ packages:
 
   /@rtsao/scc@1.1.0:
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
+    dev: true
+
+  /@types/bcryptjs@2.4.6:
+    resolution: {integrity: sha512-9xlo6R2qDs5uixm0bcIqCeMCE6HiQsIyel9KQySStiyqNl2tnj2mP3DX1Nf56MD6KMenNNlBBsy3LJ7gUEQPXQ==}
     dev: true
 
   /@types/json-schema@7.0.15:
@@ -914,6 +946,10 @@ packages:
 
   /base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
+    dev: false
+
+  /bcryptjs@2.4.3:
+    resolution: {integrity: sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==}
     dev: false
 
   /brace-expansion@1.1.11:
@@ -1805,7 +1841,6 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /function-bind@1.1.2:
@@ -2582,7 +2617,6 @@ packages:
       '@prisma/engines': 5.19.1
     optionalDependencies:
       fsevents: 2.3.3
-    dev: true
 
   /process-warning@3.0.0:
     resolution: {integrity: sha512-mqn0kFRl0EoqhnL0GQ0veqFHyIN1yig9RHh/InzORTUiZHFRAur+aMtRkELNwGs9aNwKS6tg/An4NYBPGwvtzQ==}
